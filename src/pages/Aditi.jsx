@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaTiktok, FaFacebookF, FaInstagram } from 'react-icons/fa';
+import { useForm } from 'react-hook-form';
 
 const Aditi = () => {
     const [timeLeft, setTimeLeft] = useState({
@@ -10,6 +11,15 @@ const Aditi = () => {
     });
 
     const [showHeader, setShowHeader] = useState(false);
+    const [contactOpen, setContactOpen] = useState(false);
+    const [isButtonHovered, setIsButtonHovered] = useState(false);
+
+    const { register, handleSubmit, formState: { errors } } = useForm();
+
+    const onSubmit = (data) => {
+        console.log(data);
+        // Handle form submission logic here
+    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -25,6 +35,17 @@ const Aditi = () => {
     }, []);
 
     useEffect(() => {
+        if (contactOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [contactOpen]);
+
+    useEffect(() => {
         const timer = setInterval(() => {
             setTimeLeft(prev => {
                 if (prev.seconds > 0) return { ...prev, seconds: prev.seconds - 1 };
@@ -38,10 +59,10 @@ const Aditi = () => {
     }, []);
 
     return (
-        <div className="min-h-screen bg-white font-['DM_Sans'] text-gray-800">
+        <div className="min-h-screen bg-white font-['DM_Sans'] text-gray-800 relative">
 
             {/* Header / Logo - Initially Hidden, Shows on Scroll */}
-            <div className={`fixed top-0 left-0 w-full z-50 bg-white transition-all duration-500 ease-in-out transform ${showHeader ? 'translate-y-0 opacity-100 shadow-sm' : '-translate-y-full opacity-0'}`}>
+            <div className={`fixed top-0 left-0 w-full z-40 bg-white transition-all duration-500 ease-in-out transform ${showHeader ? 'translate-y-0 opacity-100 shadow-sm' : '-translate-y-full opacity-0'}`}>
                 <div className="py-2 flex justify-center">
                     <div className="text-center">
                         <img
@@ -132,14 +153,21 @@ const Aditi = () => {
                     <h2 className="text-xl md:text-2xl text-[#DA7988] font-medium tracking-widest uppercase mb-3">
                         Welcome To The World Of Fragrance !!!
                     </h2>
-                    <p className="text-[#1E1E1E] text-sm font-medium leading-relaxed mb-8">
-                        We Are Happy To See You, Our Site Is Almost Ready.<br />
-                        Please Come Back Later & We'll Surprise You !
+                    <p className="text-[#1E1E1E] text-base md:text-lg  leading-relaxed mb-8 max-w-3xl">
+                        We are crafting an immersive world where <br />
+                        perfume becomes ritual, emotion, and awakening.
                     </p>
 
+
                     <button
-                        className="px-12 py-3 rounded-full text-sm font-bold tracking-widest text-gray-800 uppercase mb-20 transition-all hover:scale-105"
-                        style={{
+                        onClick={() => setContactOpen(true)}
+                        onMouseEnter={() => setIsButtonHovered(true)}
+                        onMouseLeave={() => setIsButtonHovered(false)}
+                        className={`px-5 py-3 rounded-full text-sm font-bold tracking-widest uppercase mb-20 transition-all hover:scale-105 cursor-pointer ${isButtonHovered ? 'text-white' : 'text-gray-800'}`}
+                        style={isButtonHovered ? {
+                            background: '#DA7988',
+                            border: '1px solid #DA7988'
+                        } : {
                             background: `
                                 linear-gradient(#fff, #fff) padding-box,
                                 linear-gradient(90deg, #000000 0%, #DA7988 100%) border-box
@@ -147,7 +175,7 @@ const Aditi = () => {
                             border: '1px solid transparent',
                         }}
                     >
-                        Stay Tuned
+                        Receive the First Blessing
                     </button>
 
                     <div className="w-full relative mt-8 md:-mt-20 flex flex-col md:flex-row items-end justify-between z-10">
@@ -192,8 +220,100 @@ const Aditi = () => {
                     </div>
                 </div>
             </div>
-        </div>
-    )
-}
 
-export default Aditi
+            {/* POPUP MODAL */}
+            {contactOpen && (
+                <div
+                    className="fixed inset-0 z-[999] bg-[url('/contact.jpg')] bg-cover bg-center bg-no-repeat flex items-center justify-center p-4 overflow-hidden after:content-[''] after:absolute after:inset-0 after:bg-black/50 after:backdrop-blur-[3px] after:z-[-1]"
+                    onClick={() => setContactOpen(false)}
+                >
+
+                    <div
+                        className="bg-white relative w-full max-w-4xl min-h-[400px] md:min-h-[500px] shadow-2xl flex flex-col items-center justify-center px-6 py-10 md:px-16 md:py-12 overflow-hidden md:overflow-visible rounded-lg md:rounded-none"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        {/* DECORATIVE FLOWERS - Positioning to match screenshot with Mobile Responsiveness */}
+
+                        {/* Top Left - Large Hanging Flower */}
+                        <div className="absolute -top-[50px] -left-[50px] w-[140px] md:-top-[100px] md:-left-[250px] md:w-[450px] z-20 pointer-events-none">
+                            <img src="/left.png" alt="Flower Top Left" className="w-full h-full object-contain" />
+                        </div>
+
+                        {/* Bottom Right - Rising Flower */}
+                        <div className="absolute -bottom-[60px] -right-[30px] w-[160px] md:-bottom-[80px] md:-right-[250px] md:w-[490px] z-20 pointer-events-none">
+                            <img src="/img.png" alt="Flower Bottom Right" className="w-full h-full object-contain rotate-[-10deg]" />
+                        </div>
+
+                        {/* Small Floating Flower - Right Side (near Name) */}
+                        <div className="absolute top-[25%] -right-[15px] w-10 md:top-[30%] md:right-[70px] md:w-28 z-20 pointer-events-none opacity-90">
+                            <img src="/img1.png" alt="Small Flower Right" className="w-full object-contain" />
+                        </div>
+
+                        {/* Small Floating Flower - Left Side (near Contact) */}
+                        <div className="absolute bottom-[20%] -left-[20px] w-12 md:left-[50px] md:w-28 z-20 pointer-events-none opacity-90 transform scale-x-[-1]">
+                            <img src="/img1.png" alt="Small Flower Left" className="w-full object-contain" />
+                        </div>
+
+
+                        {/* FORM CONTENT */}
+                        <div className="relative z-10 w-full max-w-2xl text-center mt-2 md:mt-0">
+                            <h2 className="text-xl md:text-3xl text-black mb-2 font-['DM_Sans'] whitespace-normal md:whitespace-nowrap leading-tight">
+                                Be among the first to enter the gardens of Maison Aditi.
+                            </h2>
+
+                            <p className="text-[#00000085] text-xs md:text-lg mb-8 md:mb-10 leading-relaxed px-4 md:px-0">
+                                Receive Early Access, Sacred Stories, And Your Personal
+                                <br className="hidden md:block" />
+                                Fragrance Awakening.
+                            </p>
+
+                            <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-md mx-auto flex flex-col gap-6 md:gap-8">
+                                <div className="group relative">
+                                    <input
+                                        {...register("name", { required: true })}
+                                        type="text"
+                                        placeholder="Name"
+                                        className="w-full border-b border-[#000000] py-2 focus:outline-none focus:border-black transition placeholder-gray-500 text-gray-800 text-sm bg-transparent"
+                                    />
+                                    {errors.name && <span className="absolute -bottom-5 left-0 text-red-400 text-[10px]">Name is required</span>}
+                                </div>
+
+                                <div className="group relative">
+                                    <input
+                                        {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
+                                        type="email"
+                                        placeholder="Email"
+                                        className="w-full border-b border-[#000000] py-2 focus:outline-none focus:border-black transition placeholder-gray-500 text-gray-800 text-sm bg-transparent"
+                                    />
+                                    {errors.email && <span className="absolute -bottom-5 left-0 text-red-400 text-[10px]">Valid email is required</span>}
+                                </div>
+
+                                <div className="group relative">
+                                    <input
+                                        {...register("contact", { required: true })}
+                                        type="tel"
+                                        placeholder="Contact No"
+                                        className="w-full border-b border-[#000000] py-2 focus:outline-none focus:border-black transition placeholder-gray-500 text-gray-800 text-sm bg-transparent"
+                                    />
+                                    {errors.contact && <span className="absolute -bottom-5 left-0 text-red-400 text-[10px]">Contact number is required</span>}
+                                </div>
+
+                                <div className="pt-6 md:pt-8 flex justify-center w-full">
+                                    <button
+                                        type="submit"
+                                        className="w-full border border-pink-200 text-[#1E1E1E] font-bold text-sm md:text-md uppercase py-3 md:py-3.5
+                                                 hover:bg-[#ffc0cb] transition duration-300 flex items-center justify-center gap-2 group"
+                                    >
+                                        RECEIVE BLESSING <span className="text-lg group-hover:translate-x-1 transition-transform">→</span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            )}
+        </div>
+    );
+};
+
+export default Aditi;
