@@ -257,7 +257,7 @@ const Aditi = () => {
 
                         {/* FORM CONTENT */}
                         <div className="relative z-10 w-full max-w-2xl text-center mt-10 md:mt-4">
-                            <h2 className="text-xl md:text-3xl text-black mb-2 font-['DM_Sans'] whitespace-normal md:whitespace-nowrap leading-tight">
+                            <h2 className="text-xl md:text-xl text-black mb-2 font-medium uppercase  whitespace-normal md:whitespace-nowrap leading-tight">
                                 Be among the first to enter the gardens of Maison Aditi.
                             </h2>
 
