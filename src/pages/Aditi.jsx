@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaTiktok, FaFacebookF, FaInstagram } from 'react-icons/fa';
+import { FaTiktok, FaFacebookF, FaInstagram, FaArrowLeft } from 'react-icons/fa';
 import { useForm } from 'react-hook-form';
 
 const Aditi = () => {
@@ -119,7 +119,7 @@ const Aditi = () => {
                             />
 
                             <span className="text-[10px] md:text-sm font-bold tracking-widest text-gray-800 border-b-2 border-[#F1F16D] pb-1 uppercase text-center">
-                                Time Left Until Launching......
+                                A Fragrance Journey is Awakening.....
                             </span>
 
                             <img
@@ -188,7 +188,7 @@ const Aditi = () => {
                             />
                         </div>
 
-                        <div className="w-full flex flex-col md:flex-row items-center justify-center gap-6 md:gap-20 md:pl-28 -mt-20 pt-0 md:mt-0 md:pt-10 pb-4 z-10">
+                        <div className="w-full flex flex-col md:flex-row items-center justify-center gap-6 md:gap-20 md:pl-14 -mt-20 pt-0 md:mt-0 md:pt-10 pb-4 z-10">
 
                             <div className="text-[12px] md:text-[13px] text-[#1E1E1E] whitespace-nowrap order-2 md:order-1">
                                 @2026 All Copyrights Reserved
@@ -224,12 +224,12 @@ const Aditi = () => {
             {/* POPUP MODAL */}
             {contactOpen && (
                 <div
-                    className="fixed inset-0 z-[999] bg-[url('/contact.jpg')] bg-cover bg-center bg-no-repeat flex items-center justify-center p-4 overflow-hidden after:content-[''] after:absolute after:inset-0 after:bg-black/50 after:backdrop-blur-[3px] after:z-[-1]"
+                    className="fixed inset-0 z-[999] bg-[url('/contact.jpg')] bg-cover  bg-center bg-no-repeat flex flex-col items-center justify-center p-4 overflow-hidden after:content-[''] after:absolute after:inset-0 after:bg-black/50 after:backdrop-blur-[3px] after:z-[-1]"
                     onClick={() => setContactOpen(false)}
                 >
 
                     <div
-                        className="bg-white relative w-full max-w-4xl min-h-[400px] md:min-h-[500px] shadow-2xl flex flex-col items-center justify-center px-6 py-10 md:px-16 md:py-12 overflow-hidden md:overflow-visible rounded-lg md:rounded-none"
+                        className="bg-white relative w-full mt-16 max-w-4xl min-h-[400px] md:min-h-[500px] shadow-2xl flex flex-col items-center justify-center px-6 py-10 md:px-16 md:py-12 overflow-hidden md:overflow-visible rounded-lg md:rounded-none"
                         onClick={(e) => e.stopPropagation()}
                     >
                         {/* DECORATIVE FLOWERS - Positioning to match screenshot with Mobile Responsiveness */}
@@ -256,7 +256,7 @@ const Aditi = () => {
 
 
                         {/* FORM CONTENT */}
-                        <div className="relative z-10 w-full max-w-2xl text-center mt-2 md:mt-0">
+                        <div className="relative z-10 w-full max-w-2xl text-center mt-10 md:mt-4">
                             <h2 className="text-xl md:text-3xl text-black mb-2 font-['DM_Sans'] whitespace-normal md:whitespace-nowrap leading-tight">
                                 Be among the first to enter the gardens of Maison Aditi.
                             </h2>
@@ -309,6 +309,16 @@ const Aditi = () => {
                                 </div>
                             </form>
                         </div>
+                    </div>
+
+                    {/* Back Navigation Button - Placed below the card */}
+                    <div className="mt-8 flex justify-center z-[1000]">
+                        <button
+                            onClick={() => setContactOpen(false)}
+                            className="w-12 h-12 rounded-full border border-white/60 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all duration-300 backdrop-blur-sm"
+                        >
+                            <FaArrowLeft className="text-md" />
+                        </button>
                     </div>
                 </div>
             )}
