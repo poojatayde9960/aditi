@@ -201,7 +201,7 @@ const Aditi = () => {
                                 <a href="#" className="hover:opacity-70 transition">
                                     <img src="https://api.iconify.design/fe:facebook.svg" alt="Facebook" className="w-4 h-4" />
                                 </a>
-                                <a href="#" className="hover:opacity-70 transition">
+                                <a href="https://www.instagram.com/maisonaditi?igsh=MTBtbHM2Zjl6dW1yaw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition">
                                     <img src="https://api.iconify.design/lets-icons:insta-fill.svg" alt="Instagram" className="w-5 h-5" />
                                 </a>
                             </div>
