@@ -94,43 +94,43 @@ const AditiLanding = () => {
                 </p>
 
                 {/* THE UNVEILING IN */}
-                <p className="text-center text-[10px] md:text-xs font-light tracking-[0.3em] uppercase text-gray-400 mb-8">
+                <p className="text-center text-[10px] md:text-xs font-light tracking-[0.3em] uppercase text-[#000000] mb-8">
                     The Unveiling In
                 </p>
 
                 {/* Countdown Timer */}
-                <div className="flex gap-4 md:gap-8 items-center justify-center mb-16">
-                    <div className="text-center">
-                        <div className="text-5xl md:text-7xl font-light text-black">
+                <div className="flex gap-6 md:gap-8 items-center justify-center mb-16">
+                    <div className="flex items-baseline gap-2">
+                        <span className="text-5xl md:text-6xl font-light text-black">
                             {String(timeLeft.days).padStart(2, '0')}
-                        </div>
-                        <div className="text-[10px] md:text-xs tracking-[0.1em] uppercase text-gray-400 mt-1">
+                        </span>
+                        <span className="text-[10px] md:text-xs tracking-[0.15em] uppercase text-gray-400 self-end mb-2">
                             Days
-                        </div>
+                        </span>
                     </div>
-                    <div className="text-center">
-                        <div className="text-5xl md:text-7xl font-light text-black">
+                    <div className="flex items-baseline gap-2">
+                        <span className="text-5xl md:text-6xl font-light text-black">
                             {String(timeLeft.hours).padStart(2, '0')}
-                        </div>
-                        <div className="text-[10px] md:text-xs tracking-[0.1em] uppercase text-gray-400 mt-1">
+                        </span>
+                        <span className="text-[10px] md:text-xs tracking-[0.15em] uppercase text-gray-400 self-end mb-2">
                             Hours
-                        </div>
+                        </span>
                     </div>
-                    <div className="text-center">
-                        <div className="text-5xl md:text-7xl font-light text-black">
+                    <div className="flex items-baseline gap-2">
+                        <span className="text-5xl md:text-6xl font-light text-black">
                             {String(timeLeft.minutes).padStart(2, '0')}
-                        </div>
-                        <div className="text-[10px] md:text-xs tracking-[0.1em] uppercase text-gray-400 mt-1">
+                        </span>
+                        <span className="text-[10px] md:text-xs tracking-[0.15em] uppercase text-gray-400 self-end mb-2">
                             Mins
-                        </div>
+                        </span>
                     </div>
-                    <div className="text-center">
-                        <div className="text-5xl md:text-7xl font-light text-black">
+                    <div className="flex items-baseline gap-2">
+                        <span className="text-5xl md:text-6xl font-light text-black">
                             {String(timeLeft.seconds).padStart(2, '0')}
-                        </div>
-                        <div className="text-[10px] md:text-xs tracking-[0.1em] uppercase text-gray-400 mt-1">
+                        </span>
+                        <span className="text-[10px] md:text-xs tracking-[0.15em] uppercase text-gray-400 self-end mb-2">
                             Sec
-                        </div>
+                        </span>
                     </div>
                 </div>
 
