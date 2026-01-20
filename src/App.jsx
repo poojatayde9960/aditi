@@ -7,8 +7,9 @@ const App = () => {
   return <>
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Aditi />} />
-        <Route path='/landing' element={<AditiLanding />} />
+        <Route path='/' element={<AditiLanding />} />
+        {/* <Route path='/' element={<Aditi />} /> */}
+        {/* <Route path='/' element={<AditiLanding />} /> */}
         <Route path='*' element={<h1>Page Not Found</h1>} />
       </Routes>
     </BrowserRouter>
