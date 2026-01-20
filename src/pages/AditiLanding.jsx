@@ -73,62 +73,62 @@ const AditiLanding = () => {
             </div>
 
             {/* Content Section */}
-            <div className="flex-1 flex flex-col items-center justify-start bg-white px-6 py-16 md:py-20">
+            <div className="flex-1 flex flex-col items-center justify-start bg-white px-4 md:px-6 py-12 md:py-20">
                 {/* Main Heading */}
-                <h1 className="text-center text-base md:text-4xl font-thin tracking-[0.35em] uppercase text-[#000000] mb-12 leading-relaxed">
+                <h1 className="text-center text-sm md:text-4xl font-thin tracking-[0.25em] md:tracking-[0.35em] uppercase text-[#000000] mb-8 md:mb-12 leading-relaxed">
                     An Olfactory Journey<br />Begins Within
                 </h1>
 
                 {/* Email Input */}
-                <div className="w-full max-w-md mb-4">
+                <div className="w-full max-w-md mb-3 md:mb-4 px-4 md:px-0">
                     <input
                         type="email"
                         placeholder="Email Address"
-                        className="w-full px-6 py-4 bg-[#F5F5F5] text-center tracking-[0.20em]   text-sm text-gray-400 placeholder-gray-400 focus:outline-none focus:ring-0"
+                        className="w-full px-4 md:px-6 py-3 md:py-4 bg-[#F5F5F5] text-center tracking-[0.15em] md:tracking-[0.20em] text-xs md:text-sm text-gray-400 placeholder-gray-400 focus:outline-none focus:ring-0"
                     />
                 </div>
 
                 {/* Enter The Circle */}
-                <p className="text-center text-sm md:text-base font-normal tracking-[0.2em] uppercase text-black mb-12">
+                <p className="text-center text-xs md:text-base font-normal tracking-[0.15em] md:tracking-[0.2em] uppercase text-black mb-8 md:mb-12">
                     Enter The Circle
                 </p>
 
                 {/* THE UNVEILING IN */}
-                <p className="text-center text-[10px] md:text-xs font-light tracking-[0.3em] uppercase text-[#000000] mb-8">
+                <p className="text-center text-[9px] md:text-xs font-light tracking-[0.25em] md:tracking-[0.3em] uppercase text-[#000000] mb-6 md:mb-8">
                     The Unveiling In
                 </p>
 
                 {/* Countdown Timer */}
-                <div className="flex gap-6 md:gap-8 items-center justify-center mb-16">
-                    <div className="flex items-baseline gap-2">
-                        <span className="text-5xl md:text-6xl font-light text-black">
+                <div className="flex flex-wrap gap-3 md:gap-8 items-center justify-center mb-10 md:mb-16">
+                    <div className="flex items-baseline gap-1 md:gap-2">
+                        <span className="text-4xl md:text-6xl font-light text-black">
                             {String(timeLeft.days).padStart(2, '0')}
                         </span>
-                        <span className="text-[10px] md:text-xs tracking-[0.15em] uppercase text-gray-400 self-end mb-2">
+                        <span className="text-[9px] md:text-xs tracking-[0.1em] md:tracking-[0.15em] uppercase text-gray-400 self-end mb-1 md:mb-2">
                             Days
                         </span>
                     </div>
-                    <div className="flex items-baseline gap-2">
-                        <span className="text-5xl md:text-6xl font-light text-black">
+                    <div className="flex items-baseline gap-1 md:gap-2">
+                        <span className="text-4xl md:text-6xl font-light text-black">
                             {String(timeLeft.hours).padStart(2, '0')}
                         </span>
-                        <span className="text-[10px] md:text-xs tracking-[0.15em] uppercase text-gray-400 self-end mb-2">
+                        <span className="text-[9px] md:text-xs tracking-[0.1em] md:tracking-[0.15em] uppercase text-gray-400 self-end mb-1 md:mb-2">
                             Hours
                         </span>
                     </div>
-                    <div className="flex items-baseline gap-2">
-                        <span className="text-5xl md:text-6xl font-light text-black">
+                    <div className="flex items-baseline gap-1 md:gap-2">
+                        <span className="text-4xl md:text-6xl font-light text-black">
                             {String(timeLeft.minutes).padStart(2, '0')}
                         </span>
-                        <span className="text-[10px] md:text-xs tracking-[0.15em] uppercase text-gray-400 self-end mb-2">
+                        <span className="text-[9px] md:text-xs tracking-[0.1em] md:tracking-[0.15em] uppercase text-gray-400 self-end mb-1 md:mb-2">
                             Mins
                         </span>
                     </div>
-                    <div className="flex items-baseline gap-2">
-                        <span className="text-5xl md:text-6xl font-light text-black">
+                    <div className="flex items-baseline gap-1 md:gap-2">
+                        <span className="text-4xl md:text-6xl font-light text-black">
                             {String(timeLeft.seconds).padStart(2, '0')}
                         </span>
-                        <span className="text-[10px] md:text-xs tracking-[0.15em] uppercase text-gray-400 self-end mb-2">
+                        <span className="text-[9px] md:text-xs tracking-[0.1em] md:tracking-[0.15em] uppercase text-gray-400 self-end mb-1 md:mb-2">
                             Sec
                         </span>
                     </div>
