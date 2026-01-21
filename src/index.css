@@ -4,8 +4,30 @@
   .font-montserrat {
     font-family: 'Montserrat', sans-serif;
   }
-  
+
   .font-poppins {
     font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer utilities {
+
+  /* Smooth bounce animation */
+  @keyframes smooth-bounce {
+
+    0%,
+    100% {
+      transform: translateY(0);
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+
+    50% {
+      transform: translateY(-10px);
+      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+  }
+
+  .animate-smooth-bounce {
+    animation: smooth-bounce 2s infinite;
   }
 }
