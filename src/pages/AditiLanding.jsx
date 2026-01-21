@@ -88,7 +88,7 @@ const AditiLanding = () => {
   text-white text-[10px] md:text-xs tracking-[0.3em] opacity-80
   whitespace-nowrap text-center"
                 >
-                    {soundOn ? 'TAP TO MUTE SOUND' : 'TAP TO ENABLE SOUND'}
+                    {soundOn ? 'TAP TO DISABLE SOUND' : 'TAP TO ENABLE SOUND'}
                 </div>
 
                 {/* Black Opacity Overlay - Desktop Only */}
