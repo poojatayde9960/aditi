@@ -51,12 +51,11 @@ const AditiLanding = () => {
                     className="hidden md:block w-full h-full object-cover"
                 />
 
-                {/* Mobile Video - video2.mp4 */}
+                {/* Mobile Video - with audio */}
                 <video
                     src="/mobileV.mp4"
                     autoPlay
                     loop
-                    muted
                     playsInline
                     className="block md:hidden w-full h-full object-cover"
                 />
@@ -65,22 +64,13 @@ const AditiLanding = () => {
                 <div className="hidden md:block absolute inset-0 bg-black/50 pointer-events-none"></div>
 
                 {/* Scroll Down Icon - Centered at bottom of video */}
-                <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-smooth-bounce cursor-pointer group">
-                    <div className="w-10 h-10 md:w-14 md:h-14 rounded-full border-2 border-white 
-      flex items-center justify-center shadow-lg shadow-white/30 
-      backdrop-blur-sm bg-white/10 
-      transition-all duration-300 group-hover:bg-white/30 group-hover:scale-110">
-
-                        <svg className="w-5 h-5 md:w-7 md:h-7 text-white 
-          transition-transform duration-200 group-hover:translate-y-1"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                                d="M19 14l-7 7m0 0l-7-7m7 7V3">
-                            </path>
+                <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer group">
+                    <div className="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-white flex items-center justify-center shadow-lg shadow-white/30 backdrop-blur-sm bg-white/10 transition-all duration-200 group-hover:bg-white/30 group-hover:scale-110">
+                        <svg className="w-5 h-5 md:w-7 md:h-7 text-white transition-transform duration-300 group-hover:translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
                         </svg>
                     </div>
                 </div>
-
             </div>
 
             {/* Content Section */}
