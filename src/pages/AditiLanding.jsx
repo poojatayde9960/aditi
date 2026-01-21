@@ -117,7 +117,7 @@ const AditiLanding = () => {
 
 
                     <span className="hidden md:inline">
-                        An olfactory Journey<br />
+                        An olfactive Journey<br />
                         Begins Within
                     </span>
                 </h1>
