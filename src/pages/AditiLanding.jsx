@@ -88,8 +88,8 @@ const AditiLanding = () => {
     text-[15px]
     leading-[2.1]
     tracking-[0.28em]
-    mt-8
-    mb-6
+    -mt-8
+    -mb-6
 
     md:text-[45.48px]
     md:leading-[77px]
@@ -98,11 +98,23 @@ const AditiLanding = () => {
     md:mb-12
   "
                 >
-                    <span className="md:hidden text-2xl">
-                        An Olfactory<br />
-                        Journey<br />
-                        Begins Within
+                    <span className="
+  md:hidden
+  text-xl
+  tracking-[0.2em]
+  leading-snug
+  text-center
+  px-4
+  max-w-full
+">
+                        <span className="block break-words">
+                            AN&nbsp;OLFACTORY&nbsp;JOURNEY
+                        </span>
+                        <span className="block break-words">
+                            BEGINS&nbsp;WITHIN
+                        </span>
                     </span>
+
 
                     <span className="hidden md:inline">
                         An Olfactory Journey<br />
