@@ -1,6 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const AditiLanding = () => {
+    const videoRef = useRef(null);
+    const [soundOn, setSoundOn] = useState(false);
+
+
     const [timeLeft, setTimeLeft] = useState({
         days: 23,
         hours: 9,
@@ -22,6 +26,19 @@ const AditiLanding = () => {
         }, 1000);
         return () => clearInterval(timer);
     }, []);
+    const toggleSound = () => {
+        if (!videoRef.current) return;
+
+        if (soundOn) {
+            videoRef.current.muted = true;
+            setSoundOn(false);
+        } else {
+            videoRef.current.muted = false;
+            videoRef.current.volume = 1;
+            setSoundOn(true);
+        }
+    };
+
 
     return (
         <div className="min-h-screen bg-white flex flex-col">
@@ -40,7 +57,11 @@ const AditiLanding = () => {
 
 
             {/* Video Section - Exactly as in screenshot */}
-            <div className="w-full h-[100dvh] relative">
+            <div
+                className="w-full h-[100dvh] relative cursor-pointer"
+                onClick={toggleSound}
+            >
+
                 {/* Desktop Video */}
                 <video
                     src="/video2.mp4"
@@ -51,14 +72,24 @@ const AditiLanding = () => {
                     className="hidden md:block w-full h-full object-cover"
                 />
 
-                {/* Mobile Video - with audio */}
+                {/* Mobile Video */}
                 <video
+                    ref={videoRef}
                     src="/mobileV.mp4"
                     autoPlay
                     loop
+                    muted
                     playsInline
+                    preload="auto"
                     className="block md:hidden w-full h-full object-cover"
                 />
+                <div
+                    className="absolute bottom-24 left-1/2 -translate-x-1/2 
+  text-white text-[10px] md:text-xs tracking-[0.3em] opacity-80
+  whitespace-nowrap text-center"
+                >
+                    {soundOn ? 'TAP TO MUTE SOUND' : 'TAP TO ENABLE SOUND'}
+                </div>
 
                 {/* Black Opacity Overlay - Desktop Only */}
                 <div className="hidden md:block absolute inset-0 bg-black/50 pointer-events-none"></div>
