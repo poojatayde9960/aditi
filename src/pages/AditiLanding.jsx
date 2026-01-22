@@ -6,26 +6,50 @@ const AditiLanding = () => {
 
 
     const [timeLeft, setTimeLeft] = useState({
-        days: 21,
-        hours: 9,
-        minutes: 56,
-        seconds: 2
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0
     });
-
-
+    const targetDate = new Date("2026-02-22T11:00:00");
 
     useEffect(() => {
+        const targetDate = new Date("2026-02-22T00:00:00"); // 22 Feb midnight
+
         const timer = setInterval(() => {
-            setTimeLeft(prev => {
-                if (prev.seconds > 0) return { ...prev, seconds: prev.seconds - 1 };
-                if (prev.minutes > 0) return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
-                if (prev.hours > 0) return { ...prev, hours: prev.hours - 1, minutes: 59, seconds: 59 };
-                if (prev.days > 0) return { ...prev, days: prev.days - 1, hours: 23, minutes: 59, seconds: 59 };
-                return prev;
-            });
+            const now = new Date().getTime();
+            const difference = targetDate.getTime() - now;
+
+            if (difference <= 0) {
+                clearInterval(timer);
+                setTimeLeft({
+                    days: 0,
+                    hours: 0,
+                    minutes: 0,
+                    seconds: 0
+                });
+                return;
+            }
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor(
+                (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+            );
+            const minutes = Math.floor(
+                (difference % (1000 * 60 * 60)) / (1000 * 60)
+            );
+            const seconds = Math.floor(
+                (difference % (1000 * 60)) / 1000
+            );
+
+            setTimeLeft({ days, hours, minutes, seconds });
         }, 1000);
+
         return () => clearInterval(timer);
     }, []);
+
+
+
     const toggleSound = () => {
         if (!videoRef.current) return;
 
