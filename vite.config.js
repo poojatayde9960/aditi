@@ -4,4 +4,11 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss(),],
+  server: {
+    host: true, // allow network access
+    port: 5173,
+    strictPort: true,
+    // Add this line to allow Cloudflared hostname
+    allowedHosts: ['.trycloudflare.com'],
+  },
 })

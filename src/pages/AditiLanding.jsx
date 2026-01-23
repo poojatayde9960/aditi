@@ -109,22 +109,24 @@ const AditiLanding = () => {
                 />
                 <div
                     className="
-    absolute
-    bottom-28
-    left-1/2
-    -translate-x-1/2
-    text-[10px]
-    md:text-xs
-    tracking-[0.3em]
-    opacity-80
-    whitespace-nowrap
-    text-center
-    text-white
-    z-20
-  "
+        absolute
+        bottom-28
+        left-1/2
+        -translate-x-1/2
+        text-[10px]
+        md:text-xs
+        tracking-[0.3em]
+        opacity-80
+        whitespace-nowrap
+        text-center
+        text-white
+        z-20
+        md:hidden  
+    "
                 >
                     {soundOn ? 'Tap To Disable Sound' : 'Tap To Enable Sound'}
                 </div>
+
 
 
                 {/* Black Opacity Overlay - Desktop Only */}
@@ -167,11 +169,11 @@ const AditiLanding = () => {
                 >
                     <span className="
   md:hidden
-  text-lg
+  text-md
   tracking-[0.2em]
   leading-snug
   text-center
-  px-8
+  px-4
   max-w-full
 ">
                         <span className="block break-words">
@@ -239,12 +241,12 @@ const AditiLanding = () => {
 
 
                 {/* THE UNVEILING IN */}
-                <p className="font-montserrat text-center text-[13px] md:text-lg font-light tracking-[0.25em] md:tracking-[0.3em] text-[#000000] mb-4 md:mb-6 md:mb-8">
-                    Unveiling In
+                <p className="font-montserrat text-center text-[14px] md:text-lg font-light tracking-[0.25em] md:tracking-[0.3em] text-[#000000] mb-4 md:mb-6 md:mb-8">
+                    The  Unveiling In
                 </p>
 
                 {/* Countdown Timer */}
-                <div className="w-full flex  md:flex-row gap-3 mr-1  md:mr-0 md:gap-4 md:gap-8 items-center justify-center mb-16 mt-3 md:mb-10 md:mb-16">
+                <div className="w-full flex  md:flex-row gap-3 ml-8  md:mr-0 md:gap-4 md:gap-8 items-center justify-center mb-16 mt-3 md:mb-10 md:mb-16">
                     <div className="flex items-center justify-center gap-1">
                         <span className="font-poppins text-black text-[25px] md:text-[54.03px]" style={{
                             fontWeight: 300,
