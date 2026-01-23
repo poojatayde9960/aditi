@@ -242,11 +242,13 @@ const AditiLanding = () => {
 
                 {/* THE UNVEILING IN */}
                 <p className="font-montserrat text-center text-[14px] md:text-lg font-light tracking-[0.25em] md:tracking-[0.3em] text-[#000000] mb-4 md:mb-6 md:mb-8">
-                    The  Unveiling In
+                    Unveiling In
                 </p>
 
                 {/* Countdown Timer */}
-                <div className="w-full flex  md:flex-row gap-3 ml-8  md:mr-0 md:gap-4 md:gap-8 items-center justify-center mb-16 mt-3 md:mb-10 md:mb-16">
+                {/* <div className="w-full flex  md:flex-row gap-3 ml-8  md:mr-0 md:gap-4 md:gap-8 items-center justify-center mb-16 mt-3 md:mb-10 md:mb-16"> */}
+                <div className="w-full ml-5 flex flex-row gap-9 md:gap-14 items-center justify-center mb-16 mt-3">
+
                     <div className="flex items-center justify-center gap-1">
                         <span className="font-poppins text-black text-[25px] md:text-[54.03px]" style={{
                             fontWeight: 300,
@@ -261,19 +263,26 @@ const AditiLanding = () => {
                         </span>
                     </div>
                     <div className="flex items-center justify-center mr-1  gap-1 pl-1">
-                        <span className="font-poppins text-black text-[25px] md:text-[54.03px]" style={{
-                            fontWeight: 300,
-                            lineHeight: '100%',
-                            letterSpacing: '0.05em',
-                            textTransform: 'capitalize'
-                        }}>
-                            {String(timeLeft.hours).padStart(2, '0')}
-                        </span>
-                        <span className="text-[10px] md:text-xs font-montserrat tracking-[0.1em] md:tracking-[0.15em] text-gray-400">
+                        <div className="absolute left-1/2 -translate-x-[38%] pr-[1px] flex items-center gap-1">
+
+
+                            <span className="font-poppins text-black text-[25px] md:text-[54.03px]" style={{
+                                fontWeight: 300,
+                                lineHeight: '100%',
+                                letterSpacing: '0.05em',
+                                textTransform: 'capitalize'
+                            }}>
+                                {String(timeLeft.hours).padStart(2, '0')}
+                            </span>
+                            <span className="text-[10px] md:text-xs font-montserrat tracking-[0.1em] md:tracking-[0.15em] text-gray-400">Hours</span>
+                        </div>
+
+                        {/* <span className="text-[10px] md:text-xs font-montserrat tracking-[0.1em] md:tracking-[0.15em] text-gray-400">
                             Hours
-                        </span>
+                        </span> */}
                     </div>
-                    <div className="flex items-center justify-center gap-1">
+                    <div className="flex items-center justify-center ml-6 md:ml-10 gap-1">
+
                         <span className="font-poppins text-black text-[25px] md:text-[54.03px]" style={{
                             fontWeight: 300,
                             lineHeight: '100%',
@@ -301,7 +310,7 @@ const AditiLanding = () => {
                     </div> */}
                 </div>
 
-                <div className='mr-3'>
+                <div className='mr-7'>
                     {/* Social Media Icons - Solid Squares */}
                     <div className="flex gap-3  items-center justify-center mb-4 ">
                         <a
